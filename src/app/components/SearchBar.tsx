@@ -57,7 +57,7 @@ const SearchBar: FC<Props> = ({word, setWord, search}) => {
             }
           }
           id="default-search" 
-          className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+          className="block w-full p-4 ps-10 text-sm text-gray-900 dark:text-white border border-gray-300 rounded-lg bg-gray-50 dark:bg-zinc-900 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500" 
           placeholder="Search for a word..." 
           required 
           />

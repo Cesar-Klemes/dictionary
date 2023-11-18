@@ -15,3 +15,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
+.dark body {
+  background-color: rgb(24 24 27); /* Cor de fundo para o modo escuro */
+}

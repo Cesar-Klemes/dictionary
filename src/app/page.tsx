@@ -45,7 +45,7 @@ export default function Home() {
       <div className='mt-5'>
         <SearchBar word={word} setWord={setWord} search={request}/>
       </div>
-      <div className='text-4xl my-12 font-bold h-2'>
+      <div className='text-4xl my-12 font-bold h-2 dark:text-white'>
         {word}
       </div>
       

@@ -13,7 +13,7 @@ export function Meaning({data}: Props) {
                 Array.isArray(meaning.meanings) && meaning.meanings.map((value: any) => (
                     <div key={meaning.word + index} className='mb-8'>
                         <div className="relative flex items-center">
-                            <span className="flex-shrink mr-4">{ value.partOfSpeech }</span>
+                            <span className="flex-shrink mr-4 dark:text-blue-400">{ value.partOfSpeech }</span>
                         <div className="flex-grow border-t border-gray-400"></div>
                         <div className="flex-grow border-t border-gray-400"></div>
                         </div>
@@ -21,7 +21,7 @@ export function Meaning({data}: Props) {
                             <span className='text-gray-300'>Meanings</span>
                         </div>
                         {Array.isArray(value.definitions) && value.definitions.map((definition: any) => (
-                            <ul className="list-disc ml-5" key={definition.definition}>
+                            <ul className="list-disc ml-5 dark:text-white" key={definition.definition}>
                                 <li>
                                     {definition.definition}
                                 </li>
