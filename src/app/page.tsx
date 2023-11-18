@@ -1,28 +1,33 @@
+'use client'
+
 import Image from 'next/image'
 import SearchBar from './components/SearchBar';
 import { Meaning } from './components/Meaning';
+import { useState } from 'react';
+import { BookOpenIcon } from '@heroicons/react/24/solid'
 
 export default function Home() {
+  const [word, setWord] = useState('');
+  const [data, setData] = useState([]);
+
+  const request = async() => {
+    setData([])
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`).then((data: any) => data.json())
+    setData(response)
+  }
 
   return (
     <main className='container mx-auto mt-10'>
-      <div>icone</div>
+      <div><BookOpenIcon className="h-10 w-10" /></div>
       <div className='mt-5'>
-        <SearchBar/>
+        <SearchBar word={word} setWord={setWord} search={request}/>
       </div>
-      <div className='text-4xl my-12 font-bold'>
-        Word
+      <div className='text-4xl my-12 font-bold h-2'>
+        {word}
       </div>
-      <div className="relative flex items-center">
-        <span className="flex-shrink mr-4">Noun</span>
-        <div className="flex-grow border-t border-gray-400"></div>
-        <div className="flex-grow border-t border-gray-400"></div>
-      </div>
-      <div className='mt-8'>
-        <span className='text-gray-300'>Meanings</span>
-      </div>
+      
       <div>
-        <Meaning/>
+        <Meaning data={data}/>
       </div>
     </main>
   )
